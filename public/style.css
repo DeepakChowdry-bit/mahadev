@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input{
+    background: transparent;
+}
+
+@media print {
+    #printButton {
+        display: none;
+    }
+}

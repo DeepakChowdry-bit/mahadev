@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex flex-col items-center justify-evenly h-screen">
+        <h3 class="text-2xl font-bold">Welcome to Mahadev</h3>
+        <div class="flex items-center justify-center w-11/12">
+            <form action="/auth/login" method="POST"
+                class="border border-[#888] w-full h-[300px] flex flex-col items-center justify-center gap-3 rounded-md">
+                <h2 class="text-xl font-bold uppercase">Owner Auth</h2>
+                <input type="text" name="username"
+                    class="outline-none bg-[#eee] w-[90%] h-12 px-3 border border-[#999] rounded"
+                    placeholder="Username">
+
+                <input type="password" name="password"
+                    class="outline-none bg-[#eee] w-[90%] h-12 px-3 border border-[#999] rounded"
+                    placeholder="Secret Code">
+                <button type="submit" class="w-[90%] h-12 bg-[#111] text-white rounded">Login</button>
+
+                <!-- <a href="/register">Don't have an acc? <span class="text-[#486cff]">Signup</span></a> -->
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

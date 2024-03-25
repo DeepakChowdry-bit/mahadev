@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <div id="printableContent" class="flex justify-center items-center pt-10">
+        <div class="flex flex-col justify-center w-11/12 md:w-8/12 items-center gap-1">
+
+            <!-- Dealer Details -->
+            <div class='flex justify-center items-center w-full border border-black h-36'>
+                <div class='flex flex-col justify-center w-full h-full px-1'>
+                    <div class='flex justify-between items-center md:text-sm text-xs font-medium h-1/3'>
+                        <p>GSTIN: <span class='text-red-500 tracking-wider'>29ALZPB4715F1ZU</span></p>
+                        <p>Mob: <span class='text-red-500 tracking-wider'>9448306947</span></p>
+                    </div>
+                    <div class='flex flex-col justify-center gap-1 h-2/3'>
+                        <h4 class='md:text-xl text-base uppercase font-bold'>Mahadev Hardware & Electricals</h4>
+                        <p class='text-xs md:text-sm font-medium'>No.23, 7th Cross, Harsha Layout, Kengeri, BENGALURU -
+                            560060</p>
+                        <p class='hidden text-xs font-base'>Wholesale Dealers in: PVC Pipe - CPVC - Pipe Bathroom
+                            Fittings &
+                            Electrical Goods</p>
+                    </div>
+
+                </div>
+                <div class='flex flex-col justify-center border-l border-black w-1/3 h-full gap-2'>
+                    <div class='flex flex-col justify-center items-center'>
+                        <h3 class='text-sm font-bold uppercase'>Tax Invoice</h3>
+                        <p class='text-xs font-medium'>Cash/Credit</p>
+                    </div>
+                    <div class='flex flex-col justify-center items-center gap-2'>
+                        <h4 class='flex justify-between w-10/12 text-sm'>No.
+                            <span class='text-red-500'><input type="number"
+                                    class="w-10 outline-none border-b border-gray-300 text-right"></span>
+                        </h4>
+                        <h4 class='flex flex-col md:flex-row justify-between w-10/12 text-sm'>Date <span><input
+                                    type="date" class='w-full' /></span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Details -->
+            <div class='flex flex-col justify-center w-full border border-black h-32 px-2 gap-3'>
+                <p class='text-xs font-bold'>To:</p>
+                <input type="text"
+                    class='border-b border-gray-300 outline-none px-3 focus:border-black transition-all w-full text-sm pb-1 font-bold tracking-wider'
+                    placeholder='Customer Name' />
+                <div class='flex justify-center gap-4 mt-2'>
+                    <input type="text"
+                        class='border-b border-gray-300 focus:border-black transition-all outline-none px-3 w-1/2 text-sm pb-1 font-semibold'
+                        placeholder='Address' />
+                    <input type="text"
+                        class='border-b border-gray-300 focus:border-black transition-all outline-none px-3 w-1/2 uppercase text-sm pb-1 font-bold tracking-wider'
+                        placeholder='  GSTIN' />
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <table id="billTable" class="table-fixed bg-white border border-black shadow-md">
+                <thead>
+                    <tr class="bg-gray-200 uppercase text-sm font-black tracking-wider">
+                        <th class="w-1/12 py-2">No.</th>
+                        <th class="w-3/12 py-2">Particulars</th>
+                        <th class="w-1/12 py-2">HSN</th>
+                        <th class="w-2/12 py-2">Qty</th>
+                        <th class="w-2/12 py-2">Rate</th>
+                        <th class="w-2/12 py-2">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <!-- GST Section -->
+            <div class="w-full">
+                <table class="table-fixed bg-white border border-black shadow-md w-full">
+                    <thead>
+                        <tr class="bg-gray-200 uppercase text-sm  tracking-wider w-full">
+                            <th class="w-1/5 py-2">Gross</th>
+                            <th class="w-1/5 py-2">Tax Rate</th>
+                            <th class="w-1/5 py-2">SGST</th>
+                            <th class="w-1/5 py-2">CGST</th>
+                            <th class="w-2/5 py-2">Grand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-black px-2">
+                                <input id="grossInput" type="text"
+                                    class="outline-none h-full text-base font-semibold w-full" readOnly>
+                            </td>
+                            <td class="border border-black px-2">
+                                <select id="taxRate" class="outline-none h-full text-base font-semibold w-full">
+                                    <option value="0.09">9%</option>
+                                    <option value="0.06">6%</option>
+                                </select>
+
+                            </td>
+                            <td class="border border-black px-2">
+                                <input id="sgstInput" type="text"
+                                    class="outline-none h-full text-base font-semibold w-full" readOnly>
+                            </td>
+                            <td class="border border-black px-2">
+                                <input id="cgstInput" type="text"
+                                    class="outline-none h-full text-base font-semibold w-full" readOnly>
+                            </td>
+                            <td class="border border-black px-2">
+                                <input id="grandInput" type="text"
+                                    class="outline-none h-full text-base font-semibold w-full" readOnly>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Grand Total in words -->
+            <div class="w-full mt-1 flex items-center justify-between border border-black py-2 px-2 gap-2">
+                <div class="w-2/3">
+                    <h3 class="font-medium">Amount in Words:</h3>
+                    <input id="amountInWords" type="text"
+                        class='border-b border-gray-500 outline-none px-2 transition-all w-full text-sm pb-1'>
+                </div>
+                <div class="w-1/3 flex flex-col items-center border border-black">
+                    <h3 class="font-semibold">Ramchander</h3>
+                    <p class="text-red-500">Signature</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="w-full flex justify-center py-7">
+        <button id="printButton" onclick="printBill()" class="bg-black py-3 px-8 rounded-full text-white">Print
+            Bill</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
